@@ -133,4 +133,6 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    'from' => ['address' => 'testtask@karengin.com', 'name' => 'Test Task Subscriptions'],
+
 ];

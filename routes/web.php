@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'SendEmailController@form');
-Route::post('/', 'SendEmailController@sendEmail');
+Route::get('/', 'SendMailController@form');
+Route::post('/', 'SendMailController@sendEmail');

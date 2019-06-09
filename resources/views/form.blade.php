@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -16,12 +17,18 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body class="text-center">
+<body class="text-center">
+
     <form class="form-signin" method="post" enctype="multipart/form-data">
+        @isset($type)
+        <p>Status: <b>{{ $type }}</b></p>
+        <p>Url: <b>{{ $url }}</b></p>
+        <p>Emails sent: <b>{{ $count }}</b></p>
+        @endisset
         @csrf
-      <h1 class="h3 mb-3 font-weight-normal">Press button 'Send' to send.</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Press button 'Send' to send.</h1>
         <label for="type" class="sr-only">Type</label>
         <select class="form-control" id="type" name="type">
             <option value="active" selected>Active</option>
@@ -33,7 +40,9 @@
             <option value="yahoo.com">Yahoo</option>
             <option value="duckduckgo.com">DuckDuckGo</option>
         </select>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+        <p style="margin-top: 20px;"><a href="/statistics"><b>Statistics</b></a></p>
     </form>
-  </body>
+</body>
+
 </html>

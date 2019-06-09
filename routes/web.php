@@ -13,3 +13,5 @@
 
 Route::get('/', 'SendMailController@form');
 Route::post('/', 'SendMailController@sendEmail');
+
+Route::get('/statistics', 'StatisticsController@statistics');

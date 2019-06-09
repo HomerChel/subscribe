@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'log', //env('MAIL_DRIVER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +55,7 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
-    ],
+    'from' => ['address' => 'testtask@karengin.com', 'name' => 'Test Task Subscriptions'],
 
     /*
     |--------------------------------------------------------------------------
@@ -131,8 +128,6 @@ return [
     |
     */
 
-    'log_channel' => env('MAIL_LOG_CHANNEL'),
-
-    'from' => ['address' => 'testtask@karengin.com', 'name' => 'Test Task Subscriptions'],
+    'log_channel' => 'single',
 
 ];

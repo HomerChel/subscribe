@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Mail\NewsletterActive;
 use App\Mail\NewsletterInactive;
@@ -29,14 +30,22 @@ class SendMailController extends Controller
     {
         $type = $request->input('type');
         $url = $request->input('url');
+        $users = User::where('subscr_status', $type)->get();
+        $count = $users->count();
 
-        if ('active' == $type) {
-            Mail::to('elktrgtr@gmail.com')->send(new NewsletterActive($url));
-        }
-        if ('inactive' == $type) {
-            Mail::to('elktrgtr@gmail.com')->send(new NewsletterInactive($url));
+        foreach ($users as $user) {
+            if ('active' == $type) {
+                Mail::to($user->email)->send(new NewsletterActive($url, $user->name));
+            }
+            if ('inactive' == $type) {
+                Mail::to($user->email)->send(new NewsletterInactive($url, $user->name));
+            }
         }
 
-        return view('form');
+        return view('form', [
+            'type' => $type,
+            'url' => $url,
+            'count' => $count
+        ]);
     }
 }

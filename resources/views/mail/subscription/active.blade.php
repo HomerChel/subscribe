@@ -1,5 +1,5 @@
 @component('mail::message')
-# Hi!
+# Hi, {{ $name }}!
 
 Hello my active friend!
 @component('mail::panel')

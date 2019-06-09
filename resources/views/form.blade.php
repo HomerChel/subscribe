@@ -41,7 +41,8 @@
             <option value="duckduckgo.com">DuckDuckGo</option>
         </select>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
-        <p style="margin-top: 20px;"><a href="/statistics"><b>Statistics</b></a></p>
+        <p style="margin-top: 20px;"><a href="/mail_statistics"><b>Mail statistics</b></a></p>
+        <p style="margin-top: 20px;"><a href="/pages_statistics"><b>Pages statistics</b></a></p>
     </form>
 </body>
 

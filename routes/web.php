@@ -14,4 +14,7 @@
 Route::get('/', 'SendMailController@form');
 Route::post('/', 'SendMailController@sendEmail');
 
-Route::get('/statistics', 'StatisticsController@statistics');
+Route::get('/mail_statistics', 'StatisticsController@mail_statistics');
+Route::get('/pages_statistics', 'StatisticsController@pages_statistics');
+
+Route::get('/target/{number}', ['uses' => 'TargetController@target'])->where('number', '[1-3]');

@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Mail\NewsletterActive;
 use App\Mail\NewsletterInactive;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
 
 class SendMailController extends Controller
@@ -17,7 +18,11 @@ class SendMailController extends Controller
      */
     public function form()
     {
-        return view('form');
+        return view('form', [
+            'url_1' => URL::to('/target/1'),
+            'url_2' => URL::to('/target/2'),
+            'url_3' => URL::to('/target/3')
+        ]);
     }
 
     /**

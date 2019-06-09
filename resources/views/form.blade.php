@@ -36,9 +36,9 @@
         </select>
         <label for="url" class="sr-only">Url</label>
         <select class="form-control" id="url" name="url">
-            <option value="google.com" selected>Google</option>
-            <option value="yahoo.com">Yahoo</option>
-            <option value="duckduckgo.com">DuckDuckGo</option>
+            <option value="{{ $url_1 }}" selected>Target 1</option>
+            <option value="{{ $url_2 }}" selected>Target 2</option>
+            <option value="{{ $url_3 }}" selected>Target 3</option>
         </select>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
         <p style="margin-top: 20px;"><a href="/mail_statistics"><b>Mail statistics</b></a></p>

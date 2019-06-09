@@ -42,7 +42,9 @@ class StatisticsController extends Controller
         //fill Lavachart
         foreach ($stat_by_days_array as $day => $stat) {
             $days_table->addRow([
-                $day, $stat['active'], $stat['inactive']
+                $day,
+                isset($stat['active']) ? $stat['active'] : 0,
+                isset($stat['inactive']) ? $stat['inactive'] : 0
             ]);
         }
 

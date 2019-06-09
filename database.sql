@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июн 09 2019 г., 19:55
+-- Время создания: Июн 09 2019 г., 23:20
 -- Версия сервера: 5.6.39-83.1
 -- Версия PHP: 5.6.40
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `migrations`
@@ -76,7 +76,36 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_06_06_192026_create_subscriptions_table', 2),
-(4, '2019_06_09_120439_create_mail_stats_table', 3);
+(4, '2019_06_09_120439_create_mail_stats_table', 3),
+(5, '2019_06_09_190036_create_pages_stats_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `pages_stats`
+--
+
+CREATE TABLE IF NOT EXISTS `pages_stats` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `target_number` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `pages_stats`
+--
+
+INSERT INTO `pages_stats` (`id`, `target_number`, `created_at`, `updated_at`) VALUES
+(1, 1, '2019-06-09 17:01:02', '2019-06-09 17:01:02'),
+(2, 2, '2019-06-09 17:01:06', '2019-06-09 17:01:06'),
+(3, 2, '2019-06-09 17:01:08', '2019-06-09 17:01:08'),
+(4, 2, '2019-06-09 17:01:08', '2019-06-09 17:01:08'),
+(5, 2, '2019-06-09 17:01:09', '2019-06-09 17:01:09'),
+(6, 2, '2019-06-09 17:01:10', '2019-06-09 17:01:10'),
+(7, 2, '2019-06-09 17:01:11', '2019-06-09 17:01:11'),
+(8, 3, '2019-06-09 17:01:14', '2019-06-09 17:01:14');
 
 -- --------------------------------------------------------
 
